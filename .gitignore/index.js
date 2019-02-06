@@ -11,7 +11,25 @@ bot.on('ready', function(){
 bot.login(process.env.TOKEN);
 
 
+bot.on("guildMemberAdd", member => {
+    member.guild.channels.find("name", "🔥discussion🔥").send(`Bienvenue ${member} !`)
+})
+
+bot.on("guildMemberRemove", member => {
+    member.guild.channels.find("name", "🔥discussion🔥").send(`Aurevoir ${member} :sad:`)
+})
+
+bot.on('guildMemberAdd', member => {
+    var role = member.guild.roles.find('name', 'Member', 'Membre', 'Unverified');
+    member.addRole(role)
+})
+
 bot.on('message', message => {
+
+bot.on("guildMemberAdd", member => {
+    member.guild.channels.find("name", "🔥discussion🔥").send(`Bienvenue ${member} !`)
+})
+
     let command = message.content.split(" ")[0];
     const args = message.content.slice(prefix.length).split(/ +/);
     command = args.shift().toLowerCase();
