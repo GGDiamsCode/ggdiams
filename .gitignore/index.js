@@ -12,11 +12,11 @@ bot.login(process.env.TOKEN);
 
 
 bot.on("guildMemberAdd", member => {
-    member.guild.channels.find("name", "🔥discussion🔥").send(`Bienvenue ${member} !`)
+    member.guild.channels.find("name", "🔥discussion🔥").send(`Bienvenue ${member} sur **${guild.name}** !`)
 })
 
 bot.on("guildMemberRemove", member => {
-    member.guild.channels.find("name", "🔥discussion🔥").send(`Aurevoir ${member} :sad:`)
+    member.guild.channels.find("name", "🔥discussion🔥").send(`Aurevoir ${member} :sob:`)
 })
 
 bot.on('guildMemberAdd', member => {
@@ -183,7 +183,7 @@ bot.on("guildMemberAdd", member => {
     }
 
     if (message.content === prefix + "codelines"){
-        message.channel.sendMessage(`Le code du bot contient **278** lignes`)
+        message.channel.sendMessage(`Le code du bot contient **247** lignes`)
         console.log("Commande /codelines effectué")
     }
 
